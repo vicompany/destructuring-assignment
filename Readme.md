@@ -4,38 +4,17 @@ The `destructuring assignment` syntax is a JavaScript expression that makes it p
 
 ## Why should I use it?
 
-It will make your code more terse and your life much easier.
+It will make your life much easier.
 
-## Examples
+## I don't get it, where is the demo?
 
-These examples use the following object:
+All destructuring tips and tricks are documented using unit tests. Just check the [test/test.js](test/test.js) file.
 
-```javascript
-const user = {
-  get fullname() {
-    return `${this.name.first} ${this.name.last}`;
-  },
-  name: {
-    first: 'John',
-    last: 'Doe',
-  },
-  email: 'john@doe.com',
-  nickname: 'Speedy John',
-  avatar: 'me-at-work.jpg',
-  skills: [
-    'JavaScript',
-    'Vue.js',
-    'Sass',
-    'Postcss',
-  ],
-};
-```
+Or clone the project and:
 
-```javascript
-const { name, email } = user;
-
-console.log(`Hi, my name is ${name}!`);
-```
+* Run `npm install`.
+* Followed by `npm test`.
+* Profit!
 
 ## More information
 

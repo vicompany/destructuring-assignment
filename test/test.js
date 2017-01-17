@@ -62,7 +62,7 @@ describe('Default values', () => {
 		});
 	});
 
-	describe('Non-existing "say" property which uses a function call', () => {
+	describe('Non-existing "say" property which uses the result of a function call', () => {
 		it('should match "Computer says no!"', () => {
 			const { say = empty() } = user;
 
@@ -78,6 +78,64 @@ describe('Assign to new variable names', () => {
 
 			assert.equal(nick, 'Speedy John');
 			assert.equal(img, 'me-at-work.jpg');
+		});
+	});
+});
+
+describe('More advanced and tricks', () => {
+	const fibonacci = () => [1, 2, 3, 5, 8, 13, 21];
+
+	describe('Skip array values', () => {
+		const [a, b, , d] = fibonacci();
+
+		it('should match [1, 2, 5]', () => {
+			assert.equal(a, 1);
+			assert.equal(b, 2);
+			assert.equal(d, 5);
+		});
+	});
+
+	describe('Use the rest syntax', () => {
+		const [, , ...c] = fibonacci();
+
+		it('should match [3, 5, 8, 13, 21]', () => {
+			assert.deepEqual(c, [3, 5, 8, 13, 21]);
+		});
+	});
+
+	describe('Swapping variables', () => {
+		let [a, b] = fibonacci();
+
+		[a, b] = [b, a];
+
+		it('should match "a = 2" and "b = 1"', () => {
+			assert.equal(a, 2);
+			assert.equal(b, 1);
+		});
+	});
+
+	describe('Object parameter with default values', () => {
+		class Person {
+			constructor({ id = Date.now(), name = 'unknown', nick = 'unknown' } = {}) {
+				this.id = id;
+				this.name = name;
+				this.nick = nick;
+			}
+
+			say() {
+				return `Hi, my name is ${this.name}`;
+			}
+		}
+
+		const john = new Person({ name: 'John Doe' });
+
+		it('should have filled "id" and "nick" properties with default values', () => {
+			assert.ok(john.id);
+			assert.equal(john.nick, 'unknown');
+		});
+
+		it('should have used the "name" config property', () => {
+			assert.equal(john.name, 'John Doe');
 		});
 	});
 });
