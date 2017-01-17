@@ -1,0 +1,18 @@
+{
+  "name": "destructuring-assignment",
+  "version": "1.0.0",
+  "description": "A demo about destructuring",
+  "private": true,
+  "author": "VI Company",
+  "license": "MIT",
+  "main": "test/test.js",
+  "scripts": {
+    "test": "npm run lint && mocha",
+    "lint": "eslint test/*.js"
+  },
+  "devDependencies": {
+    "eslint": "^3.13.1",
+    "eslint-config-vi": "^4.0.0",
+    "mocha": "^3.2.0"
+  }
+}
