@@ -25,16 +25,14 @@ const [a, b, c] = numbers; // 1, 2, 3
 
 All destructuring tips and tricks are documented using unit tests. Just check the [test/test.js](test/test.js) file.
 
-### Subjects
-
-#### Basics
+### Basics
 
 * [Object destructuring](test/test.js#L22)
 * [Array destructuring](test/test.js#L43)
 * [Using default values](test/test.js#L54)
 * [Assign to new variable names](test/test.js#L74)
 
-#### Advanced
+### Advanced
 
 * [Skip array values](test/test.js#L88)
 * [Use the rest syntax](test/test.js#L98)
