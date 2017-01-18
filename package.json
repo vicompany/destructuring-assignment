@@ -7,8 +7,9 @@
   "license": "MIT",
   "main": "test/test.js",
   "scripts": {
-    "test": "npm run lint && mocha",
-    "lint": "eslint test/*.js"
+    "lint": "eslint test/*.js",
+    "test": "mocha test/",
+    "watch": "npm run test -- -w"
   },
   "devDependencies": {
     "eslint": "^3.13.1",

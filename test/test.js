@@ -1,7 +1,5 @@
 const assert = require('assert');
 
-const empty = () => 'Computer says no!';
-
 const user = {
 	get fullname() {
 		return `${this.name.first} ${this.name.last}`;
@@ -63,6 +61,8 @@ describe('Default values', () => {
 	});
 
 	describe('Non-existing "say" property which uses the result of a function call', () => {
+		const empty = () => 'Computer says no!';
+
 		it('should match "Computer says no!"', () => {
 			const { say = empty() } = user;
 
