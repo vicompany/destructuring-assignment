@@ -5,15 +5,15 @@
   "private": true,
   "author": "VI Company",
   "license": "MIT",
-  "main": "test/test.js",
+  "main": "test/workshop.js",
   "scripts": {
     "lint": "eslint test/*.js",
-    "test": "mocha test/",
-    "watch": "npm run test -- -w"
+    "test": "mocha test",
+    "start": "npm run test -- -w"
   },
   "devDependencies": {
-    "eslint": "^3.13.1",
-    "eslint-config-vi": "^4.0.0",
+    "eslint": "^4.7.2",
+    "eslint-config-vi": "^8.0.0",
     "mocha": "^3.2.0"
   }
 }

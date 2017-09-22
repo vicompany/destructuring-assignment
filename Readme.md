@@ -1,4 +1,4 @@
-# Destructuring assignment
+# Destructuring assignment workshop
 
 The `destructuring assignment` syntax is a JavaScript expression that makes it possible to extract data from arrays or objects into variables.
 
@@ -21,23 +21,9 @@ const [a, b, c] = numbers; // 1, 2, 3
 2. Parameter definitions.
 3. In a `for-of` loop.
 
-## Show me, where is the demo?
+## I want to learn this
 
-All destructuring tips and tricks are documented using unit tests. Just check the [test/test.js](test/test.js) file.
-
-### Basics
-
-* [Object destructuring](test/test.js#L22)
-* [Array destructuring](test/test.js#L43)
-* [Using default values](test/test.js#L54)
-* [Assign to new variable names](test/test.js#L74)
-
-### Advanced
-
-* [Skip array values](test/test.js#L88)
-* [Use the rest syntax](test/test.js#L98)
-* [Swapping variables](test/test.js#L106)
-* [Object parameter with default values](test/test.js#L117)
+All destructuring tips and tricks are covered using (failing) unit tests. It's up to you to make the tests pass. You can use the [test/workshop.js](test/workshop.js) file.
 
 ## More information
 
@@ -49,5 +35,5 @@ All destructuring tips and tricks are documented using unit tests. Just check th
 Clone the project and:
 
 * Run `npm install`.
-* Followed by `npm test` or `npm run watch`.
+* Followed by `npm test` or `npm start` to watch.
 * Enjoy!

@@ -22,8 +22,6 @@ const user = {
 describe('Object destructuring', () => {
 	describe('fullname, email and nickname', () => {
 		it('should match "John Doe", "john@doe.com" and "Speedy John"', () => {
-			const { fullname, email, nickname } = user;
-
 			assert.equal(fullname, 'John Doe');
 			assert.equal(email, 'john@doe.com');
 			assert.equal(nickname, 'Speedy John');
@@ -32,8 +30,6 @@ describe('Object destructuring', () => {
 
 	describe('Nested "name" properties', () => {
 		it('should match "John" and "Doe"', () => {
-			const { name: { first, last } } = user;
-
 			assert.equal(first, 'John');
 			assert.equal(last, 'Doe');
 		});
@@ -43,8 +39,6 @@ describe('Object destructuring', () => {
 describe('Array destructuring', () => {
 	describe('First and second skill', () => {
 		it('should match "JavaScript" and "Vue.js"', () => {
-			const { skills: [first, second] } = user;
-
 			assert.equal(first, 'JavaScript');
 			assert.equal(second, 'Vue.js');
 		});
@@ -54,8 +48,6 @@ describe('Array destructuring', () => {
 describe('Default values', () => {
 	describe('Non-existing "wife" property', () => {
 		it('should match "Tatjana"', () => {
-			const { wife = 'Tatjana' } = user;
-
 			assert.equal(wife, 'Tatjana');
 		});
 	});
@@ -64,8 +56,6 @@ describe('Default values', () => {
 		const empty = () => 'Computer says no!';
 
 		it('should match "Computer says no!"', () => {
-			const { say = empty() } = user;
-
 			assert.equal(say, 'Computer says no!');
 		});
 	});
@@ -74,8 +64,6 @@ describe('Default values', () => {
 describe('Assign to new variable names', () => {
 	describe('Rename "nickname" to "nick" and "avatar" to "img"', () => {
 		it('should match "Speedy John" and "me-at-work.jpg"', () => {
-			const { nickname: nick, avatar: img } = user;
-
 			assert.equal(nick, 'Speedy John');
 			assert.equal(img, 'me-at-work.jpg');
 		});
@@ -86,8 +74,6 @@ describe('More advanced and tricks', () => {
 	const fibonacci = () => [1, 2, 3, 5, 8, 13, 21];
 
 	describe('Skip array values', () => {
-		const [a, b, , d] = fibonacci();
-
 		it('should match [1, 2, 5]', () => {
 			assert.equal(a, 1);
 			assert.equal(b, 2);
@@ -96,18 +82,12 @@ describe('More advanced and tricks', () => {
 	});
 
 	describe('Use the rest syntax', () => {
-		const [, , ...c] = fibonacci();
-
 		it('should match [3, 5, 8, 13, 21]', () => {
 			assert.deepEqual(c, [3, 5, 8, 13, 21]);
 		});
 	});
 
 	describe('Swapping variables', () => {
-		let [a, b] = fibonacci();
-
-		[a, b] = [b, a];
-
 		it('should match "a = 2" and "b = 1"', () => {
 			assert.equal(a, 2);
 			assert.equal(b, 1);
@@ -116,7 +96,7 @@ describe('More advanced and tricks', () => {
 
 	describe('Object parameter with default values', () => {
 		class Person {
-			constructor({ id = Date.now(), name = 'unknown', nick = 'unknown' } = {}) {
+			constructor(id, name, nick) {
 				this.id = id;
 				this.name = name;
 				this.nick = nick;
