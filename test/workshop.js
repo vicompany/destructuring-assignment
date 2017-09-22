@@ -88,6 +88,8 @@ describe('More advanced and tricks', () => {
 	});
 
 	describe('Swapping variables', () => {
+		let [a, b] = fibonacci();
+
 		it('should match "a = 2" and "b = 1"', () => {
 			assert.equal(a, 2);
 			assert.equal(b, 1);
@@ -96,7 +98,7 @@ describe('More advanced and tricks', () => {
 
 	describe('Object parameter with default values', () => {
 		class Person {
-			constructor(id, name, nick) { // change the constructor parameter
+			constructor(id, name, nick) { // change parameter so it accepts default property values
 				this.id = id;
 				this.name = name;
 				this.nick = nick;
