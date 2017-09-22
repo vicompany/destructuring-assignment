@@ -96,7 +96,7 @@ describe('More advanced and tricks', () => {
 
 	describe('Object parameter with default values', () => {
 		class Person {
-			constructor(id, name, nick) {
+			constructor(id, name, nick) { // change the constructor parameter
 				this.id = id;
 				this.name = name;
 				this.nick = nick;
